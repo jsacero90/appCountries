@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy": "ng build --prod --base-href https://jsacero90.github.io/appCountries/ && npx ngh --dir=dist/countries-app"
+    "deploy": "ng build --configuration production --base-href ./ && npx ngh --dir=dist/countries-app"
   },
   "private": true,
   "dependencies": {
@@ -45,5 +45,11 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "ng lint",
+      "pre-push": "npm run deploy"
+    }
   }
 }
