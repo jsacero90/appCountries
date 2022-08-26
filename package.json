@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng build --prod --base-href https://jsacero90.github.io/appCountries/ && npx ngh --dir=dist/countries-app"
   },
   "private": true,
   "dependencies": {
