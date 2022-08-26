@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-by-capital',
   templateUrl: './by-capital.component.html',
   styles: [
   ]
-})
-export class ByCapitalComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+} )
+export class ByCapitalComponent { }

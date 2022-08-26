@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-see-country',
   templateUrl: './see-country.component.html',
   styles: [
   ]
-})
-export class SeeCountryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+} )
+export class SeeCountryComponent { }
