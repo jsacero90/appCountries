@@ -1,13 +1,6 @@
 <div class="row container mt-4">
-  <div class="col-3">
-    <h2>Busquedas</h2>
-    <hr>
-    <ul class="list-group">
-      <li class="list-group-item" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        Buscar país</li>
-      <li class="list-group-item" routerLink="region" routerLinkActive="active">Buscar región</li>
-      <li class="list-group-item" routerLink="capital" routerLinkActive="active">Buscar capital</li>
-    </ul>
+  <div class="col-sm-12 col-lg-3 mb-3">
+    <app-sidebar></app-sidebar>
   </div>
   <div class="col">
     <router-outlet></router-outlet>

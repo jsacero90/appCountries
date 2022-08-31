@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LetDirective } from './directives/let.directive';
 
 
 
 @NgModule( {
   declarations: [
-    SidebarComponent
+    SidebarComponent,
+    LetDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ], exports: [
-    SidebarComponent
+    SidebarComponent,
+    LetDirective
   ]
 } )
 export class SharedModule { }
