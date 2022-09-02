@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "deploy": "ng build --configuration production --base-href ./ && npx ngh --dir=dist/countries-app",
     "prepare": "husky install"
   },
@@ -39,6 +40,8 @@
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^4.3.8",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
@@ -46,6 +49,8 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "prettier": "^2.7.1",
+    "prettier-eslint": "^15.0.1",
     "typescript": "~4.6.2"
   },
   "husky": {

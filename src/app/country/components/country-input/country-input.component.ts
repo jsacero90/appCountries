@@ -1,16 +1,20 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { debounceTime, Subject, Unsubscribable } from 'rxjs';
 
-@Component( {
+@Component({
   selector: 'app-country-input',
   templateUrl: './country-input.component.html',
-  styles: [
-  ]
-} )
-export class CountryInputComponent implements OnInit, OnDestroy
-{
-
-  @Input() placeholder: string = ''
+  styles: [],
+})
+export class CountryInputComponent implements OnInit, OnDestroy {
+  @Input() placeholder: string = '';
   @Output() enterEvent: EventEmitter<string> = new EventEmitter();
   @Output() debounceEvent: EventEmitter<string> = new EventEmitter();
 
@@ -20,28 +24,23 @@ export class CountryInputComponent implements OnInit, OnDestroy
 
   public term: string = '';
 
-  ngOnInit (): void
-  {
+  ngOnInit(): void {
     this.unSubscribable = this.deboucer
-      .pipe( debounceTime( 300 ) )
-      .subscribe( value =>
-      {
-        this.debounceEvent.emit( value )
-      } )
+      .pipe(debounceTime(300))
+      .subscribe(value => {
+        this.debounceEvent.emit(value);
+      });
   }
 
-  ngOnDestroy (): void
-  {
+  ngOnDestroy(): void {
     this.unSubscribable.unsubscribe();
   }
 
-  search (): void
-  {
-    this.enterEvent.emit( this.term );
+  search(): void {
+    this.enterEvent.emit(this.term);
   }
 
-  keyPressed ()
-  {
-    this.deboucer.next( this.term );
+  keyPressed() {
+    this.deboucer.next(this.term);
   }
 }

@@ -1,15 +1,19 @@
-<ng-container *directiveLet="(countries$ | async) as countries">
+<ng-container *directiveLet="countries$ | async as countries">
   <h2>Por País</h2>
-  <hr>
+  <hr />
   <div class="row">
     <div class="col">
-      <app-country-input placeholder="Buscar país..." (enterEvent)="search($event)"
+      <app-country-input
+        placeholder="Buscar país..."
+        (enterEvent)="search($event)"
         (debounceEvent)="suggestions($event)">
       </app-country-input>
     </div>
   </div>
-  <hr>
-  <div *ngIf="countries?.length === 0" class="alert alert-danger">No se encontro el {{term}}</div>
+  <hr />
+  <div *ngIf="countries?.length === 0" class="alert alert-danger">
+    No se encontro el {{ term }}
+  </div>
 
   <div *ngIf="countries && countries?.length > 0" class="row">
     <div class="col">

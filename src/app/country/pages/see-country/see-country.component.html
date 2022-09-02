@@ -1,5 +1,4 @@
-<div *directiveLet="(country$ | async) as country">
-
+<div *directiveLet="country$ | async as country">
   <div *ngIf="!country; else divCountry" class="alert alert-info">
     Espere por favor ...
   </div>
@@ -7,22 +6,35 @@
   <ng-template #divCountry>
     <div class="row">
       <div class="col-12">
-        <h1>Pais: <small>{{country?.name?.common}}</small></h1>
+        <h1>
+          Pais: <small>{{ country?.name?.common }}</small>
+        </h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-12 col-lg-4 mb-3">
         <h3>Bandera</h3>
-        <img [src]="country?.flags?.svg" [alt]="country?.name?.common" class="img-thumbnail">
+        <img
+          [src]="country?.flags?.svg"
+          [alt]="country?.name?.common"
+          class="img-thumbnail" />
       </div>
       <div class="col">
         <h3>Información</h3>
         <ul class="list-group">
-          <li class="list-group-item"><strong>Población: </strong>{{country?.population | number}}</li>
-          <li class="list-group-item"><strong>Capital: </strong>{{country?.capital}}</li>
-          <li class="list-group-item"><strong>Codígo numerico: </strong>{{country?.ccn3}}</li>
-          <li class="list-group-item"><strong>Región: </strong>{{country?.region}}</li>
+          <li class="list-group-item">
+            <strong>Población: </strong>{{ country?.population | number }}
+          </li>
+          <li class="list-group-item">
+            <strong>Capital: </strong>{{ country?.capital }}
+          </li>
+          <li class="list-group-item">
+            <strong>Codígo numerico: </strong>{{ country?.ccn3 }}
+          </li>
+          <li class="list-group-item">
+            <strong>Región: </strong>{{ country?.region }}
+          </li>
         </ul>
       </div>
     </div>
@@ -30,8 +42,11 @@
     <h3>Traducciones</h3>
     <div class="row">
       <div class="col mb-4">
-        <span *ngFor="let translation of country?.translations"
-          class="badge bg-primary me-1">{{translation.common}}</span>
+        <span
+          *ngFor="let translation of country?.translations"
+          class="badge bg-primary me-1"
+          >{{ translation.common }}</span
+        >
       </div>
     </div>
   </ng-template>

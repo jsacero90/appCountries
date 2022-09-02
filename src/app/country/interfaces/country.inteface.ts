@@ -1,5 +1,4 @@
-export interface CountryResponse
-{
+export interface CountryResponse {
   name: Name;
   tld: string[];
   cca2: string;
@@ -16,7 +15,7 @@ export interface CountryResponse
   region: string;
   subregion: string;
   languages?: Languages;
-  translations: { [ key: string ]: Translation };
+  translations: { [key: string]: Translation };
   latlng: number[];
   landlocked: boolean;
   borders: string[];
@@ -37,92 +36,77 @@ export interface CountryResponse
   postalCode: PostalCode;
 }
 
-export interface CapitalInfo
-{
+export interface CapitalInfo {
   latlng: number[];
 }
 
-export interface Car
-{
+export interface Car {
   signs: string[];
   side: string;
 }
 
-export interface CoatOfArms
-{
+export interface CoatOfArms {
   png: string;
   svg: string;
 }
 
-export interface Currencies
-{
+export interface Currencies {
   PEN: Pen;
 }
 
-export interface Pen
-{
+export interface Pen {
   name: string;
   symbol: string;
 }
 
-export interface Demonyms
-{
+export interface Demonyms {
   eng: Eng;
   fra: Eng;
 }
 
-export interface Eng
-{
+export interface Eng {
   f: string;
   m: string;
 }
 
-export interface Gini
-{
-  "2019": number;
+export interface Gini {
+  '2019': number;
 }
 
-export interface Idd
-{
+export interface Idd {
   root: string;
   suffixes: string[];
 }
 
-export interface Languages
-{
+export interface Languages {
   aym: string;
   que: string;
   spa: string;
 }
 
-export interface Maps
-{
+export interface Maps {
   googleMaps: string;
   openStreetMaps: string;
 }
 
-export interface Name
-{
+export interface Name {
   common: string;
   official: string;
   nativeName: NativeName;
 }
 
-export interface NativeName
-{
+export interface NativeName {
   aym: Translation;
   que: Translation;
   spa: Translation;
 }
 
-export interface Translation
-{
+export interface Translation {
   official: string;
   common: string;
 }
 
-export interface PostalCode
-{
+export interface PostalCode {
   format: string;
   regex: string;
 }

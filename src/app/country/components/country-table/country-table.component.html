@@ -10,15 +10,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let country of countries; let i=index">
-        <td>{{i+1}}</td>
+      <tr *ngFor="let country of countries; let i = index">
+        <td>{{ i + 1 }}</td>
         <td>
-          <img [src]="country.flags.svg" [alt]="'Bandera '+country.name.common" class="small-flag">
+          <img
+            [src]="country.flags.svg"
+            [alt]="'Bandera ' + country.name.common"
+            class="small-flag" />
         </td>
-        <td>{{country.capital}}, {{country.name.common}}</td>
-        <td>{{country.population | number}}</td>
+        <td>{{ country.capital }}, {{ country.name.common }}</td>
+        <td>{{ country.population | number }}</td>
         <td>
-          <a [routerLink]="['/country',country.cca2]">ver...</a>
+          <a [routerLink]="['/country', country.cca2]">ver...</a>
         </td>
       </tr>
     </tbody>
