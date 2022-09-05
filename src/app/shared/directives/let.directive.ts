@@ -7,7 +7,7 @@ interface LetContext<T> {
 @Directive({
   selector: '[directiveLet]',
 })
-export class LetDirective<T = unknown> {
+export class LetDirective<T> {
   private _context: LetContext<T> = { directiveLet: null };
 
   constructor(

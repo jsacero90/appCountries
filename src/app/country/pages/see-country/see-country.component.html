@@ -1,4 +1,6 @@
-<div *directiveLet="country$ | async as country">
+<div
+  *directiveLet="country$ | async as country"
+  class="animate__animated animate__fadeIn animate__faster">
   <div *ngIf="!country; else divCountry" class="alert alert-info">
     Espere por favor ...
   </div>

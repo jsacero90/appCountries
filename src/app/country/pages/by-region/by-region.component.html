@@ -1,2 +1,30 @@
-<h2>Por Region</h2>
-<hr />
+<div
+  *directiveLet="countries$ | async as countries"
+  class="animate__animated animate__fadeIn animate__faster">
+  <h2>
+    Buscar por región <small> {{ activeRegion | titlecase }} </small>
+  </h2>
+  <hr />
+
+  <h5>Seleccione la región</h5>
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regions"
+        [class]="
+          region !== activeRegion
+            ? 'btn btn-outline-primary me-1'
+            : 'btn me-1 btn-primary'
+        "
+        (click)="activateRegion(region)">
+        {{ region | titlecase }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="countries && countries?.length > 0" class="row">
+    <div class="col">
+      <app-country-table [countries]="countries"></app-country-table>
+    </div>
+  </div>
+</div>

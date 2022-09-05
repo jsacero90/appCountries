@@ -1,4 +1,6 @@
-<ng-container *directiveLet="capitals$ | async as capitals">
+<div
+  *directiveLet="capitals$ | async as capitals"
+  class="animate__animated animate__fadeIn animate__faster">
   <h2>Por Capitales</h2>
   <hr />
   <div class="row">
@@ -19,4 +21,4 @@
       <app-country-table [countries]="capitals"></app-country-table>
     </div>
   </div>
-</ng-container>
+</div>
